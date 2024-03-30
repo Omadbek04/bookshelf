@@ -6,3 +6,4 @@ export { default as searchL } from "./searchL.svg";
 export { default as qongiroq } from "./qongiroq.svg";
 export { default as searchLwhite } from "./searchLwhite.svg";
 export { default as notFound } from "./notFound.svg";
+export { default as createBook } from "./create-book.svg";
