@@ -5,6 +5,7 @@ import BookBackgroungImage from "../../ui/BookBackgroungImage";
 function Login() {
   const [name, setName] = useState("");
   const [pvd, setPvd] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <BookBackgroungImage>
       <form className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-form-bg py-[48px] px-[28px] rounded-[12px] w-[430px] flex flex-col gap-[12px]">
@@ -21,6 +22,20 @@ function Login() {
                    py-2 pl-3 w-full rounded-md"
           />
         </label>
+
+        <label className=" flex flex-col gap-1">
+          <span className=" text-[14px] font-medium">Email</span>
+          <input
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Enter your email"
+            className="outline-none focus:outline-none border border-inputBorder  shadow-inputShadow
+                   py-2 pl-3 w-full rounded-md"
+          />
+        </label>
+
         <label className=" flex flex-col gap-1 focus:text-red-500">
           <span className={`text-[14px] font-medium `}>Password</span>
           <input
