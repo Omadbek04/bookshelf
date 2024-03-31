@@ -2,10 +2,22 @@ import Button from "../../ui/FormButton";
 import FormLink from "../../ui/FormLink";
 import { useState } from "react";
 import BookBackgroungImage from "../../ui/BookBackgroungImage";
+import { useNavigate } from "react-router-dom";
 function Login() {
   const [name, setName] = useState("");
   const [pvd, setPvd] = useState("");
   const [email, setEmail] = useState("");
+  const navigate= useNavigate()
+  const reset=()=>{
+    setName("")
+    setEmail("")
+    setPvd("")
+  }
+  const handlerUser = (e) => {
+    e.preventDefult();
+    reset()
+  
+  };
   return (
     <BookBackgroungImage>
       <form className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-form-bg py-[48px] px-[28px] rounded-[12px] w-[430px] flex flex-col gap-[12px]">
@@ -51,7 +63,7 @@ function Login() {
           />
         </label>
 
-        <Button>Button</Button>
+        <Button onClick={handlerUser}>Button</Button>
         <FormLink to={"/register"}> Go to sign in.</FormLink>
       </form>
     </BookBackgroungImage>
